@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LunoExchangeTest</string>
+    <string name="create_new_order_toolbar_title">Creating new Order</string>
+    <string name="price">Price</string>
+    <string name="pair">Pair</string>
+    <string name="volume">Volume</string>
+    <string name="create_order">Create Order</string>
+    <string name="not_all_fields_were_filled_error">Please fill all required fields</string>
+    <string name="volume_must_be_positive_error">Volume must be positive</string>
+    <string name="transaction_list_toolbar_title">Transactions List</string>
+    <string name="success">Success</string>
+</resources>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@android:color/white">
+
+    <com.andersenlab.lunoexchangebtc.ui.custom.DoubleToggleView
+        android:id="@+id/type_order_toggle"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:buttonsTextColor="@color/black"
+        app:containerBackground="@drawable/button_bar_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:leftButtonBackground="@color/black"
+        app:leftToggleText="BUY"
+        app:rightButtonBackground="@color/white"
+        app:rightToggleText="SELL" />
+
+    <TextView
+        android:id="@+id/tvPair"
+        style="@style/CustomTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/pair"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type_order_toggle" />
+
+    <Spinner
+        android:id="@+id/currencySpinner"
+        style="@style/CustomTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPair"
+        app:layout_constraintEnd_toEndOf="@+id/etPrice"
+        app:layout_constraintTop_toTopOf="@+id/tvPair"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        style="@style/CustomTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/price"
+        app:layout_constraintStart_toStartOf="@+id/tvPair"
+        app:layout_constraintTop_toBottomOf="@+id/tvPair" />
+
+    <EditText
+        android:id="@+id/etPrice"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvPrice"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/etVolume"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVolume"
+        app:layout_constraintEnd_toEndOf="@+id/etPrice"
+        app:layout_constraintTop_toTopOf="@+id/tvVolume"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tvVolume"
+        style="@style/CustomTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/volume"
+        app:layout_constraintStart_toStartOf="@+id/tvPrice"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
+
+    <Button
+        android:id="@+id/btnStartRequest"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/button_background"
+        android:text="@string/create_order"
+        android:textColor="@color/general_button_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvErrorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnStartRequest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="please fill price field" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_KeyId"
+        style="@style/CustomTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Key ID"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etVolume"
+        app:layout_constraintVertical_bias="0.053" />
+
+    <TextView
+        android:id="@+id/tvKeySecret"
+        style="@style/CustomTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Key Secret"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etKeyId" />
+
+    <EditText
+        android:id="@+id/etKeyId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="kfajfmx7nubhv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_KeyId" />
+
+    <EditText
+        android:id="@+id/etKeySecret"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="TBIR9hB_tv9RqGNN-_51ZIce1Tt6JAeh15SCQeQXAog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvKeySecret" />
+
+</android.support.constraint.ConstraintLayout>

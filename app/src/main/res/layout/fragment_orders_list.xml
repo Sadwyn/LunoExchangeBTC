@@ -1,0 +1,46 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.andersenlab.lunoexchangebtc.ui.custom.DoubleToggleView
+            android:id="@+id/content_type_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftButtonBackground="@color/black"
+            app:rightButtonBackground="@color/white"
+            app:buttonsTextColor="@color/white"
+            app:containerBackground="@null"
+            app:containerBackgroundColor="@null"
+            app:leftToggleText="BIDS"
+            app:rightToggleText="ASKS" />
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/content_type_bar"
+            tools:context="com.andersenlab.lunoexchangebtc.ui.activity.MainActivity">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/listTransactionsRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/createOrderButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="30dp"
+        android:tint="@android:color/white"
+        app:srcCompat="@android:drawable/ic_input_add" />
+</FrameLayout>

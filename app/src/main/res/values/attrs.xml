@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DoubleToggleView">
+        <attr name="leftToggleText" format="string" />
+        <attr name="rightToggleText" format="string" />
+        <attr name="leftButtonBackground" format="color"/>
+        <attr name="rightButtonBackground" format="color"/>
+        <attr name="leftButtonTextColor">format="color"</attr>
+        <attr name="rightButtonTextColor">format="color"</attr>
+        <attr name="buttonsTextColor">format="color"</attr>
+        <attr name="containerBackground">format="drawable"</attr>
+        <attr name="containerBackgroundColor">format="color"</attr>
+    </declare-styleable>
+</resources>
